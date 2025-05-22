@@ -1,8 +1,13 @@
+
+
+
+
 import React, { useState, useEffect } from "react";
 import { Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useUserJobContext } from "../contexts/UserJobContext";
 import JobCard from "./jobView/JobCard";
+
 import Header from "./header/Header";
 
 const jobsData = [
@@ -66,13 +71,20 @@ const JobApplied = () => {
     let jobsToShow = [];
     switch (activeTab) {
       case "applied":
-        jobsToShow = appliedJobs;
+        // Set status for all applied jobs
+        jobsToShow = appliedJobs.map(job => ({
+          ...job,
+          status: "applied"  // Add status for applied jobs
+        }));
         break;
       case "hiring":
-        jobsToShow = [];
+        jobsToShow = jobsData.filter(job => job.status === "hiring").map(job => ({
+          ...job,
+          status: "hiring"  // Make sure hiring jobs have status
+        }));
         break;
       case "previous":
-        jobsToShow = jobsData.filter((job) => job.status === "previous");
+        jobsToShow = jobsData.filter(job => job.status === "previous");
         break;
       default:
         jobsToShow = [];
