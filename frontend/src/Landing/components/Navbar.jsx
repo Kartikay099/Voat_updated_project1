@@ -27,25 +27,44 @@ const Navbar = () => {
             </svg>
           </button>
 
-          <div className="relative hidden md:block border-none focus:ring-0 focus:outline-none">
-            <div className="flex items-center bg-white rounded-full shadow-md w-80 border-none focus:ring-0 focus:outline-none h-9 py-2 px-4">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="flex-grow bg-transparent text-black placeholder-gray-500 border-none focus:ring-0 focus:outline-none text-sm"
-              />
-              <svg
-                className="text-gray-500 ml-2"
-                stroke="currentColor"
-                fill="currentColor"
-                viewBox="0 0 1024 1024"
-                height="16"
-                width="16"
-              >
-                <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" />
-              </svg>
-            </div>
-          </div>
+      <div
+  className="relative hidden md:block"
+  style={{
+    border: "none",
+    outline: "none",
+    boxShadow: "none",
+  }}
+>
+  <div
+    className="flex items-center bg-white rounded-full shadow-md w-80 h-9 py-2 px-4"
+    style={{
+      border: "none",
+      outline: "none",
+      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)", // optional polish
+    }}
+  >
+    <input
+      type="text"
+      placeholder="Search..."
+      className="flex-grow bg-transparent text-black placeholder-gray-500 border-none focus:outline-none focus:ring-0 text-sm"
+      style={{
+        border: "none",
+        outline: "none",
+      }}
+    />
+    <svg
+      className="text-gray-500 ml-2"
+      stroke="currentColor"
+      fill="currentColor"
+      viewBox="0 0 1024 1024"
+      height="16"
+      width="16"
+    >
+      <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" />
+    </svg>
+  </div>
+</div>
+
         </div>
 
         {/* Center: Title */}
@@ -96,9 +115,9 @@ const Navbar = () => {
 
         <ul className="flex flex-col gap-4 text-white text-sm">
           <li>
-            <div className="relative flex w-full rounded-full bg-white overflow-hidden h-8">
+            <div className="relative flex w-full rounded-full bg-white overflow-hidden h-7">
               <div
-                className={`absolute top-0 bottom-0 left-0 w-1/2 bg-gradient-to-r from-blue-600 to-blue-500 transition-transform duration-300 ${
+                className={`absolute top-0 bottom-0 left-0 w-1/2 bg-gradient-to-r from-blue-600 to-blue-500 transition-transform duration-350 ${
                   activeTab === "right" ? "translate-x-full" : "translate-x-0"
                 }`}
               />
